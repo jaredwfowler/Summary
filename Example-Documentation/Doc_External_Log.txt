@@ -1,0 +1,127 @@
+    ___                     ________       ________      ________  _________   
+   |\  \                   |\   ____\     |\   __  \    |\  _____\|\___   ___\ 
+   \ \  \    ____________  \ \  \___|_    \ \  \|\  \   \ \  \__/ \|___ \  \_| 
+ __ \ \  \  |\____________\ \ \_____  \    \ \  \\\  \   \ \   __\     \ \  \  
+|\  \\_\  \ \|____________|  \|____|\  \    \ \  \\\  \   \ \  \_|      \ \  \ 
+\ \________\                   ____\_\  \    \ \_______\   \ \__\        \ \__\
+ \|________|                  |\_________\    \|_______|    \|__|         \|__|
+                              \|_________|                                     
+                                                                               
+                                                                               
+
+	   _____    ____    __  __   _____    ____    ___    ___  
+	  / ____|  / __ \  |  \/  | |  __ \  |___ \  |__ \  |__ \ 
+	 | |      | |  | | | \  / | | |__) |   __) |    ) |    ) |
+	 | |      | |  | | | |\/| | |  ___/   |__ <    / /    / / 
+	 | |____  | |__| | | |  | | | |       ___) |  / /_   / /_ 
+	  \_____|  \____/  |_|  |_| |_|      |____/  |____| |____|
+		                                                  
+
+
+			    Created By: Jared Fowler
+			       October 14, 2014
+			CSUN Comp 322L ; Prof. Fitzgerald
+
+
+###################################################################################
+
+  ____  _       _               ____  _     _ _                       _                
+ |  _ \(_)_ __ (_)_ __   __ _  |  _ \| |__ (_) | ___  ___  ___  _ __ | |__   ___ _ __  
+ | | | | | '_ \| | '_ \ / _` | | |_) | '_ \| | |/ _ \/ __|/ _ \| '_ \| '_ \ / _ \ '__| 
+ | |_| | | | | | | | | | (_| | |  __/| | | | | | (_) \__ \ (_) | |_) | | | |  __/ |    
+ |____/|_|_| |_|_|_| |_|\__, | |_|   |_| |_|_|_|\___/|___/\___/| .__/|_| |_|\___|_|    
+                        |___/                                  |_|                     
+                                                                 
+###################################################################################
+
+ABOUT:
+
+The idea of the dining philosophers is to have a group of phils. around a table.  There
+is a bowl of rice in the middle and each phil. needs two chop-sticks (resources) in order 
+to eat from this bowl of rice.  The problem is that P1 shares one chop-stick with the phil. to
+his left, and the other chop-stick with the phil. to his right. The objective of this program is
+to deal with resource sharing and avoiding dead-lock.
+
+###################################################################################
+
+STATUS:
+
+- October 16, 2014 : Fully functional and tested. Works great!
+
+###################################################################################
+
+USAGE:
+
+dining-p( NumberOfSeats, WhichChairAreYou )
+
+The idea is to run this program multiple times from the same file location.  A file
+which will serve as a semaphore should be present in the calling directory, or directory
+implicated by the .c file!
+
+The program will end upon a SIGTERM signal.
+
+
+Terminal:
+
+$ bash launch-philosophers <seats> <guests>
+
+    -This will launch dining-p and take care of seating assignments
+
+Let the program run for a while. Then in a separate terminal:
+
+$ bash kill-philosophers
+
+    -This will search the process list and kill anything named dining-p
+
+
+NOTE: There are several options available via the #defines at the top of the .c file. 
+Easy modifications can be made in order to change how we avoid dead lock (Hold & Wait
+vs. Circular) and other modifications such as time_out time, etc.
+
+
+
+###################################################################################
+
+UPDATE LOG:
+
+October 21, 2014
+
+-Tested the program on the sandbox. Worked GREAT!  A final note to make about the program:
+A gloabl variable is used in order to flag is the program should end. In a previous program
+which required a similar approach, I used a type of mailbox system with a static variable. 
+I decided to use a global in this one as it is much simpler and doesn't require the extra 
+overhead which a static in non-global space would require.
+
+October 16, 2014
+
+-Wrote the main loop and included options to run different modes of the program.  The
+user can change the values in the #defines to allow deadlock, or can disable it by 
+selectng the HoldAndWait or Circular options. (Only 1 of them should be active.. If both
+are active then deadlock will occurr.)  Made modifcations to allow my code to work on
+the schools server.  Has been tested on my local machine but has not been tested on the 
+schools server. Works well and behaves as expected. (~6 hours)
+
+October 15, 2014
+
+-Experimentation with the API.  Tests:
+    Demo1: I was able to open a semaphore, and have 2 processes (via fork) take turns accessing it.
+    Demo2: I was able to open a semahpore using the 4 argument open call. Two more processes were started
+           which used the 2 argument open.  These three processes were able to operate correctly.
+    Demo3: I was able to keep all 3 dining-p runs using the 4 argument open call. Using the OCREAT
+           option only 1 available semaphore was created. I'd conclude, therefore, that only 1 semaphore
+           can exist for a file. (~1.5 hours)
+
+-Created helper functions that append a numerical value to a base string.  This allows for unique semaphore 
+naming.  Added other helper functions.  Wrote the basic start-up sequence of opening and linking to two semaphores.
+(~3 hours)
+
+October 14, 2014
+
+-The lab requirement sheet hasn't been posted yet, but basic notes have been put
+into the file which describe the different API functions which will be used.  The
+proper #include's have been added, and function main has been created. Tested and 
+runs... (~1 hour)
+-Discovered the necessity to add -pthread as a flag in the compilation. Pain. (~1 hour)
+
+
+

@@ -1,0 +1,50 @@
+Group: Jared Fowler and Ilia Benson
+Comp 484 Lab 4
+
+______ _____  ___ _________  ___ _____ 
+| ___ \  ___|/ _ \|  _  \  \/  ||  ___|
+| |_/ / |__ / /_\ \ | | | .  . || |__  
+|    /|  __||  _  | | | | |\/| ||  __| 
+| |\ \| |___| | | | |/ /| |  | || |___ 
+\_| \_\____/\_| |_/___/ \_|  |_/\____/ 
+                                       
+                                       
+
+Base Percent Complete: 100%
+
+
+Extra Credit DONE:
+2% a. The user table's password field is composed of 168 hex-chars. The first 40 of these chars is the salt, and the remaining chars are the hashed combination of the salt + plainTextPassword.
+1% b. Checks are made in both the javascript and php to ensure password strength.(Must include at least 1 letter, 1 number, and 1 special character. The password length must be of length 8 or greater.
+1% c. User name, password, and email are checked for sql injection by enforcing proper formatting. The message portion avoids it by encrypting the message before placing it into the database. Also, the account used to insert values into the DB has limited privileges. The user can insert, update, and select, but cannot delete or drop.
+
+
+Known Bugs:
+   //Void at this time.
+
+
+File Description:
+General Format - There are two types of files. Pure php files and client side files. The client side files normally have some php at the top which takes care of incomming information from the session. This info is used to set notifications and error statements. The pure php files handle a particular task and then navigate back to a client page.
+
+mailer.php - This file is called y a linux CRON job every 30 minutes. It connects to the DB, gets the current epoch time GMT, and determines which messages need to be sent. Sends them, then updates the table. This uses the swift emailing client which is contained within its own folder called "swift".
+
+lab4.php - Login Page. Login form and a link below for registration. The link to registration leads to registration.php. Submission of the form leads to loginHandler.php
+
+loginHanler.php - Server side file which takes arguments from lab4.php. Checks format of arguments, connects to database, checks for user name existence, salt-hash password and compare. If successful, goes to lobby.php, else, go back to lab4.php.
+
+registration.php - Fields available for user name and password. Checks are made on the client side for format validity. Submission goes to registrationHandler.php
+
+registrationHandler.php - Server side file which validates arguments from registration.php. Connects to database, checks for user name availability, sets up user name and password in database.
+
+lobby.php - Page where user can put email address, date, and message. The email address is checked on the client side for format. Submission goes to messageHandler.php. User can also log off which directs to logoffHandler.php.
+
+logOffHandler.php - Server side file which clears some session values and directs back to lab4.php.
+
+messageHandler.php - Server side file which validates arguments from lobby.php. Adds row to DB, with the sent flag to false. This script also takes into account the timezone differences, and adds the appropriate offset.
+
+lab4_general_php_func.php - General collection of php functions which I include into other php files.
+
+lab4_general_javascript_func.js - General collection of javascript functions which I include into other files.
+
+
+

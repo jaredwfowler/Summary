@@ -1,0 +1,167 @@
+        ______                   ______                    
+       /  __  \                 /  __  \                   
+      |  |  |  |     ______    |  |  |  |                  
+      |  |  |  |    |______|   |  |  |  |                  
+      |  `--'  |               |  `--'  |                  
+       \______/                 \______/                   
+                                                           
+  ______   .______    _______ .__   __.   _______  __      
+ /  __  \  |   _  \  |   ____||  \ |  |  /  _____||  |     
+|  |  |  | |  |_)  | |  |__   |   \|  | |  |  __  |  |     
+|  |  |  | |   ___/  |   __|  |  . `  | |  | |_ | |  |     
+|  `--'  | |  |      |  |____ |  |\   | |  |__| | |  `----.
+ \______/  | _|      |_______||__| \__|  \______| |_______|
+                                                           
+
+Created By: Jared Fowler, yrolg4tseuq@sbcglobal.net, May 27, 2015
+
+#########################################################################
+About####################################################################
+#########################################################################
+Before starting this project, I've done two major projects with openGL.
+Both of these projects have utilized an object oriented approach for the 
+models, but the actual operations of drawing were handled in a main loop.
+The goal of this project is to make an application that is much more 
+modular in the o-o sense. Each object being completely responsible for 
+its updates, draws, etc.
+It is also my desire to explore further beyond what I've already learned
+in my previous projects. glfw3 instead of freeglut, better/smarter shadow
+rendering, etc. 
+I will be generating a solar system like environment, which will be an 
+improvement upon the previous two projects which were also space 
+environments.
+
+End thoughts:
+July 6, 2015 - The project started off as a simple conversion of my previous
+openGL project to a more O-O environment. This changed into creating a small
+game engine which would allow a user to very easily add the different elements
+needed in a typical simulation. There is still much more that could be done,
+such as physics, but ultimately the core is well built and working! 
+
+#########################################################################
+Log######################################################################
+#########################################################################
+July 6, 2015 - In the last few days I was able to add the earth's atmosphere.
+This was done by enabling openGL alpha blending, which turned out to be
+very straight forward. Properties were added to the Object3D class and 
+other draw order changes made. These objects are excluded from shadow
+rendering. Added a custom camera class. I'm satisfied with the outcome.
+There is still much that could be done, but I'm going to take a break from
+this project for now. Just need to get some documentation done with.
+(~8 hours)
+
+July 3, 2015 - Switching gears into the actual original project of the 
+cubesat illustration. I was able to modify the textures being used for 
+the earth. One is the day time texture, another a pure black texture with
+light locations in white, and a third represents specular lighting. I was
+able to apply these three textures and re-write some of the previous shader
+code. It looks great now. :-)  Looking forward, I need to add the earth'same
+atmosphere, and the suns aura. These tasks will require attaching a texture
+to the render framebuffer as to allow a lookup of colors behind the current
+fragment. Transparency is a quality that will be added to object3D, and I will
+then need to update lights, and simulators draw options. (~6 hours)
+
+July 2, 2015 - Point light, spot light, and directional lights all working
+with shadow mapping! This was a large effort, though, it now seems much more
+understandable and will be easier to do in the future. A lot of work will
+still be left for the user to create the appropriate shaders to handle the 
+shadow textures. An error was fixed in the simulator update order. The key
+event handler, which also handles the view matrix update, has been placed 
+after the object updates in order to accommodate the cameras. An error was
+occurring in which a camera would be off b/c it would be in the objects 
+previous location, not the current. (~30 hours)
+
+June 27, 2015 - Shadow mapping added. This required some code re-factoring
+and additions. The framebuffer, texture, etc. used to hold the shadow 
+information was placed within the light class. This was a tough decision,
+but I decided that for every shadow there is a light that produces it. 
+There was a need to add some functionality to many areas of the project
+in order to accomodate a generic way to add shadows. I then spent the 
+next 2 days debugging the code. I finally had a successful run with
+a simple version of the depth shader, along with the shadow acne. I'll
+need to work on a generic shader which handles textures, lights, and 
+shadows.  (~20 hours)
+
+June 17, 2015 - Added user-defined controls. Added fps counter and limiter.
+Minor bugs fixed with NULL passed arguments. Took a while to think up my next
+move. Light information is now going to contain the extra frame buffer which
+takes into account depth buffer info for shadow rendering. More on this to come.
+(~8 hours)
+
+June 12-15, 2015 - Added a collection of camera object pointers to simulators
+variables. The same idea used for instances is used for cameras. Future 
+child classes which are more detailed can be added to Simulators collection
+of cameras via polymorphism. Major overhaul of the control system. I re-used
+a lot of code from my last openGL project. Most control input is now handled
+by filling vectors with user inputs, and then handling them in a later 
+called function. There as a bit of headache with the GLFW registration of callbacks.
+It was not made to work with C++, so many of the functions and variables had to 
+be changed to static to accommodate. Static initialization was added to
+the .cpp file. (~8 hours)
+
+June 11, 2015 - Added a few more models to the Simulator, testing out
+the functionality. Changed the light structure to have a char string 
+which references what object produces the light. Added the audio library
+and associated functions for adding audio, removing it, etc. (5 hours)
+
+June 6-10, 2015 - Major reconstruction of the architecture. The main 
+deciding point was based upon the desire to have a minimum amount of 
+resources stored on the graphics card. A general class named Simulator
+was created which keeps a collection of all models, shaders, textures, 
+etc. Each collection has been split into individual collections, with
+a string identifier variable. The class also has collections of Object3D
+pointers, which are divided up into background, stage, and instances. The 
+class allows a very easy way to add a new child class of Object3D, and 
+remove them. All glfw functions, along with other openGL helper functions,
+have been moved to Simulator. There were a couple of road bumps. One included
+trying to have Simulator and Object3D reference each other without double 
+declaration. This was overcome by putting the implementation of functions in
+a separate .cpp file, and adding a class prototype at the top of each .hpp file.
+(ie, at the top of Simulator.hpp I put class Object3D;, and at the top of Object3D
+I put class Simulator;) It works good, but I realize there are several bugs to work
+out, in particular with removing elements. The removal of one element could effect
+others. Perhaps a way around this is to keep a reference count. If a count is 0 and
+is marked for deletion, then delete it. (~20 hours)
+
+June 2-5, 2015 - Object3D and CelestialObject3D were added to the project. 
+These were taken from my previous openGL projects. They were modified to
+work properly with the BasicModel class. Object3D has a pointer to BasicModel,
+which allows there to be multiple Object3D's pointing to a single BasicModel.
+CelestialObject3D is a child of Object3D, which adds functionality such as
+orbital matrix, self-updating orbit and rotation, etc. After getting this 
+architecture set up I attempted to put it to test. Failed. Error was found in 
+one of the parameters to the constructor call in main. Still failed. After
+several hours of looking over code, and going as far as loading up working
+code from the openGL website and comparing step-by-step, I figured out that
+the problem came from a missing openGL parameter. In main, in the main loop,
+I had glClear(GL_COLOR_BUFFER_BIT); instead of glClear(GL_COLOR_BUFFER_BIT | 
+GL_DEPTH_BUFFER_BIT); Upon making the change I discovered that my object
+architecture worked perfectly! ..boy I hate integration.(10 hours)
+
+June 1, 2015 - Implemented the function 'unloadContent', which deletes 
+the content which has been loaded to the graphics card in the function
+'LoadContent'. I downloaded a GPU monitoring program and did some tests
+on GPU memory usage. I was able to confirm that memory was being used,
+and deleted correctly. (1.5 hours)
+
+May 29, 2015 - Included the various .hpp files from my previous openGL
+project, originally many of which came from the openGL tutorial code. 
+Included a general .hpp which handles all the includes, typedefs, defines,
+etc. Started making a new class called BasicModel. This will be used in a 
+'has a' relation. Future specific model classes will most likely point
+to this class as a basic model information object. This will allow for 
+multiple models that share the same textures, vertices, etc., to be 
+easily added without wasting more resources. I've also designed it in such
+a way to allow the user when to load the content to the GPU. This will allow
+the user flexibility as to what is currently loaded onto the graphics card.
+The constructor initiates path ways to the content files, and the LoadContent
+function will load the content onto the GPU. (3 hours)
+
+May 27, 2015 - Successfully got the openGL red triangle demo to run 
+successfully on my own, self-contained, set-up. Libraries used include: 
+glfw3 ver_3.1.1; glew ver_1.12.0; glm ver_.9.6.3 .  The header files and
+libraries were placed in their own folders.  Modifications were made to
+the visual studio project properties to look in these folders for the
+appropriate files. The DLLs were placed in the debug folder, which is
+the output build folder. By placing the DLLs here, we only need a single
+copy of them. (2.5 hours)

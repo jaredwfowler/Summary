@@ -1,0 +1,10 @@
+My First Task!,-1,1,firsttaskachiev,Create your first task.
+Multi-Tasker,-1,10,multitasker,Complete ten tasks.
+Task-Apprentice,1,-1,taskapprentice,Complete 1 hour of tasks.
+Task-Knight,12,-1,taskknight,Complete 12 hours of tasks.
+Task-Master,24,-1,taskmaster,Complete 1 day of tasks.
+Task-Wizard,168,-1,taskwizard,Complete 1 week of tasks.
+Task-Hero,672,-1,taskhero,Complete 1 month of tasks.
+Task-Zilla,8064,-1,taskzilla,Complete 1 year of tasks.
+INSANITY!!,8064,50,insanity,Complete 1 year of tasks AND have 50 tasks on your task list.
+WANG-APPROVED,99999,999,wangapproved,Complete X hours of tasks AND have Y tasks on your task list.

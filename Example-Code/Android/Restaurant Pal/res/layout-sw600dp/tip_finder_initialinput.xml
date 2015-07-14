@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/background2">
+
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView">
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Initial Tip:"
+                        android:textSize="75dp"
+                        android:id="@+id/textView"
+                        android:textColor="@color/black"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp">
+
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="."
+                        android:textSize="100dp"
+                        android:id="@+id/textView_decimal"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="100dp"
+                        android:id="@+id/textView_onesPlace"
+                        android:layout_centerVertical="true" android:layout_toLeftOf="@+id/textView_decimal"
+                        android:layout_marginRight="12dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="100dp"
+                        android:id="@+id/textView_tensPlace"
+                        android:layout_marginRight="15dp"
+                        android:layout_alignTop="@+id/textView_onesPlace"
+                        android:layout_toLeftOf="@+id/textView_onesPlace"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="100dp"
+                        android:id="@+id/textView_tenthsPlace"
+                        android:layout_alignTop="@+id/textView_decimal" android:layout_toRightOf="@+id/textView_decimal"
+                        android:layout_marginLeft="11dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textSize="100dp"
+                        android:id="@+id/textView_percentage"
+                        android:layout_marginLeft="43dp"
+                        android:layout_alignTop="@+id/textView_tenthsPlace"
+                        android:layout_toRightOf="@+id/textView_tenthsPlace"/>
+                <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="50dp"
+                        android:layout_height="500dp"
+                        android:id="@+id/button_down_tens"
+                        android:background="@drawable/button_down"
+                        android:layout_below="@+id/textView_tensPlace"
+                        android:onClick="button_down_tens_listener"
+                        android:layout_alignLeft="@+id/textView_tensPlace"/>
+                <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_down_ones"
+                        android:background="@drawable/button_down"
+                        android:layout_below="@+id/textView_decimal"
+                        android:onClick="button_down_ones_listener"
+                        android:layout_toRightOf="@+id/textView_tensPlace"/>
+                <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_down_tenths"
+                        android:background="@drawable/button_down"
+                        android:layout_below="@+id/textView_tenthsPlace"
+                        android:onClick="button_down_tenths_listener"
+                        android:layout_alignLeft="@+id/textView_tenthsPlace"/>
+                <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_up_tens"
+                        android:layout_above="@+id/textView_onesPlace"
+                        android:background="@drawable/button_up"
+                        android:onClick="button_up_tens_listener"
+                        android:layout_alignLeft="@+id/textView_tensPlace"/>
+                <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_up"
+                        android:id="@+id/button_up_ones"
+                        android:layout_above="@+id/textView_decimal"
+                        android:onClick="button_up_ones_listener"
+                        android:layout_alignLeft="@+id/textView_onesPlace"/>
+                <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_up"
+                        android:id="@+id/button_up_tenths"
+                        android:layout_above="@+id/textView_tenthsPlace"
+                        android:onClick="button_up_tenths_listener"
+                        android:layout_alignLeft="@+id/textView_tenthsPlace"/>
+            </RelativeLayout>
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="200dp">
+
+
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_start"
+                        android:background="@drawable/button_start"
+                        android:layout_centerVertical="true"
+                        android:onClick="button_start_listener"
+                        android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

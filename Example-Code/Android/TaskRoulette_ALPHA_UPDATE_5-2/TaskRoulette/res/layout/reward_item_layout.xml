@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/reward_item_layout">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/reward_name"
+            android:text="@string/rewards_title"
+            android:textSize="40sp"
+            android:textColor="@color/yellow"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/cost"
+            android:textSize="30sp"
+            android:id="@+id/reward_cost"
+            android:layout_below="@id/reward_name"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/amount"
+            android:textSize="30sp"
+            android:id="@+id/reward_cost_amount"
+            android:layout_toRightOf="@id/reward_cost"
+            android:layout_below="@id/reward_name"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/user_chips"
+            android:textSize="30sp"
+            android:id="@+id/user_chips"
+            android:layout_below="@id/reward_cost"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/amount"
+            android:textSize="30sp"
+            android:id="@+id/user_chips_amount"
+            android:layout_toRightOf="@id/user_chips"
+            android:layout_below="@id/reward_cost"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reward_image"
+            android:src="@drawable/golden_star"
+            android:layout_below="@id/reward_cost_amount"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/but"
+            android:id="@+id/buy_reward"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/reward_image"
+            android:layout_centerHorizontal="true"
+            android:onClick="buyReward"/>
+</RelativeLayout>

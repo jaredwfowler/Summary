@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/main">
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_profile"
+            android:id="@+id/profile"
+            android:layout_gravity="center_horizontal"
+            android:onClick="displayUser"/>
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_lists"
+            android:id="@+id/lists"
+            android:layout_gravity="center_horizontal"
+            android:onClick="displayLists"/>
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_achievements"
+            android:id="@+id/achievements"
+            android:layout_gravity="center_horizontal"
+            android:onClick="displayAchievements"/>
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_rewards"
+            android:id="@+id/rewards"
+            android:layout_gravity="center_horizontal"
+            android:onClick="displayRewards"/>
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_spin"
+            android:id="@+id/spin"
+            android:layout_gravity="center_horizontal"
+            android:onClick="displaySpin"/>
+</LinearLayout>

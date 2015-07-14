@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lists_edit_task">
+
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_edit_task"
+            android:id="@+id/edit_from_list"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:onClick="editTask"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_delete_task"
+            android:id="@+id/delete_from_list"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/edit_from_list"
+            android:onClick="deleteTask"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_complete_task"
+            android:id="@+id/complete_from_list"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/delete_from_list"
+            android:onClick="completeTask"/>
+
+    <!-- EDIT BOXES WITH SELECTED TASK INFO GO HERE -->
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:hint="@string/add_task_name"
+            android:layout_below="@id/edit_from_list"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/description"
+            android:hint="@string/add_task_description"
+            android:layout_below="@id/name"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/time_to_complete"
+            android:hint="@string/add_task_time"
+            android:layout_below="@id/description"/>
+    <EditText
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_hour"
+            android:hint="@string/hour"
+            android:layout_below="@id/time_to_complete"/>
+    <EditText
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_minute"
+            android:hint="@string/minute"
+            android:layout_toRightOf="@id/task_hour"
+            android:layout_below="@id/time_to_complete"/>
+</RelativeLayout>

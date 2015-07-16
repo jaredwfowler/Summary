@@ -326,6 +326,8 @@ namespace Stock_Option_Trade_Analyzer
          float ratioCut;
          if (ratios.Count > 5)
             ratioCut = ratios[ratios.Count - 5];
+         else if (ratios.Count == 0)
+            ratioCut = 99999999999999;
          else
             ratioCut = ratios[0];
 

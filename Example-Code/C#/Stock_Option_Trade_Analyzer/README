@@ -1,9 +1,0 @@
-Jared Fowler
-yrolg4tseuq@sbcglobal.net
-
-Stock Analyzer:
-Allows the user to analyze a series of stocks. Downloads data from google finance and fidelity.com,
-if the user logs in. The export button will generate a spreadsheet with much more information than 
-expressed in the application. Enjoy!
-
-Project Duration: 1 Week

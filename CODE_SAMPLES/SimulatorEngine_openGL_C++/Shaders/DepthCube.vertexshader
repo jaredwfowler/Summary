@@ -1,0 +1,17 @@
+//This should be used for point lights
+
+#version 330
+
+layout (location = 0) in vec3 Position;
+
+uniform mat4 MVP;
+uniform mat4 M;
+
+out vec3 WorldPos;
+
+void main()
+{
+    vec4 Pos4 = vec4(Position, 1.0);
+    gl_Position = MVP * Pos4;
+    WorldPos = (M * Pos4).xyz; 
+}

@@ -1,0 +1,18 @@
+//This should be used for point lights
+
+#version 330
+
+in vec3 WorldPos;
+
+uniform mat4 Light_0;
+
+out float FragColor;
+
+void main()
+{
+    vec3 LightToVertex = WorldPos - Light_0[0].xyz;
+
+    float LightToPixelDistance = length(LightToVertex);
+
+    FragColor = LightToPixelDistance;
+}

@@ -1,0 +1,917 @@
+/***************************************************************************************************
+************************         |\/| o  _ ._ _  |  _   _   _.  _           ************************
+************************         |  | | (_ | (_) | (/_ (_| (_| (_ \/        ************************
+************************                                _|        /         ************************
+************************                      Estd. 2015                    ************************
+****************************************************************************************************
+****************************************************************************************************
+**** The use, disclosure, reproduction, modification, transfer, or transmittal of this work for ****
+**** any purpose in any form or by any means without the written permission of Microlegacy is   ****
+**** strictly prohibited.                                                                       ****
+****                                                                                            ****
+**** Confidential, Unpublished Property of Microlegacy.                                         ****
+**** Use and Distribution Limited Solely to Authorized Personnel.                               ****
+****                                                                                            ****
+**** All Rights Reserved                                                                        ****
+****************************************************************************************************
+CREATOR ********************************************************************************************
+****************************************************************************************************
+****  Name:  Jared Fowler
+**** Title:  Co-Founder of Microlegacy
+****  Date:  April 13, 2016
+**** Email:  jaredwfowler@hotmail.com
+****************************************************************************************************
+VERSION ********************************************************************************************
+****************************************************************************************************
+** Version #: 1.0
+** Version Date: April 13, 2016
+** Revision Personnel: JFowler,
+****************************************************************************************************
+
+About===============================================================================================
+====================================================================================================
+Nicholas Darvas is a well known investor who successfully made 2 million dollars in the stock market
+back in the 1950's. The inspiration for this program comes from his book "How I made 2,000,000
+dollars in the stock market."
+A fundamental thought, that I have taken from this book, is that there really isn't a possible
+pure automated way to trade in the market. The tools I will program will be for the use of finding
+plausible stocks which "might" qualify for further consideration.  Considered stocks should then be
+handled on a daily basis, preferably after the market is closed. The use of stop orders, stop losses,
+and box theory should be used.
+
+Excerpts and Notes from Book: -----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+But how to start? How to find what stocks to buy? You could not pick
+them out with a pin. You must have information. That was my major
+problem: how to obtain it. I now realize that this is, in fact, impossible
+for the ordinary man
+
+
+I was buoyed up and excited by small gains, and overlooked my
+losses. I completely ignored the fact that I was holding a lot of stock
+which was standing well below the price I had paid for it and looked
+like staying there.
+
+
+I would rush to the telephone to buy the stock they recommended. It
+invariably went down. I could not understand this but I was not the
+slightest bit worried. They must know what they were talking about.
+The next stock must go up. It seldom did.
+I did not know it but I was already coming up against one of the great
+pitfalls of the small operator—the almost insoluble problem of when to
+enter the market. These sudden drops immediately after he has invested
+his money are one of the most mystifying phenomena facing the
+amateur. It took me years to realize that when these financial tipsters
+advise the small operator to buy a stock, those professionals who have
+bought the stock much earlier on inside information are selling.
+Simultaneously with the withdrawal of the inside-track money, the
+small sucker money is coming in. They are not firstest with the mostest,
+but lastest with the leastest. They are far too late, and their money is
+always too small to support the stock at its false high point once the
+professionals are out.
+
+
+I did not appreciate it at the time, but it was a
+classic refutation of: "You cannot go broke taking a profit." Of course
+you can.
+
+
+What I did not know was that when I
+came to offer them for sale, some of these stocks stuck to my fingers
+like tar. I found it very difficult getting rid of them— and rarely at
+anything like the price I paid for them. Why? Because there was no
+rigid price discipline as there is for the listed securities; there were no
+specialists—professionals to assure a continuous and orderly market;
+there were no reports where one could see at what price a transaction
+took place. There were only the "Bid" and "Ask" prices. These, I
+discovered, were often very far apart. When I wanted to sell at 42,
+which was the quoted "Ask" price, I only found a buyer at 38, the
+quoted "Bid" price. I sometimes ended up at 40 but that was by no means
+certain.
+When I stumbled into the over-the-counter market, all this was
+unknown to me. Fortunately, I quickly came to realize that this is a
+specialized field and is only lucrative for experts who really know
+something about the affairs of a particular company. I decided to give it
+up, and returned my attention to listed securities.
+
+
+Through these and other experiences, however, certain conclusions
+began to emerge. As a baby repeatedly hearing the same words starts to
+learn them, so did I slowly start, through my trading experiences, to
+discern the outlines of some rules that I could apply?
+They were:
+1. I should not follow advisory services. They are not infallible,
+either in Canada or on Wall Street.
+2. I should be cautious with brokers' advice. They can be wrong.
+3. I should ignore Wall Street sayings, no matter how ancient and
+revered.
+4. I should not trade "over the counter"—only in listed stocks
+where there is always a buyer when I want to sell.
+5. I should not listen to rumors, no matter how well founded they
+may appear.
+6. The fundamental approach worked better for me than gambling. I
+should study it.
+7. I should rather hold on to one rising stock for a longer period than
+juggle with a dozen stocks for a short period at a time.
+
+
+It would be difficult for anyone to conceive the shattering effects of
+the blow. If I had been a wild gambler, I could have expected such a
+position. But I had done my best not to be one. I had labored long and
+hard. I had done everything possible to avoid a mistake. I had
+researched, analyzed, compared. I had based my decision on the most
+trustworthy fundamental information. And yet, the only result was that
+I was wrecked to the tune of $9,000.
+
+
+What, I asked myself, was the value of examining company reports,
+studying the industry outlook, the ratings, the price-earnings ratios? The
+stock that saved me from disaster was one about which I knew nothing.
+I picked it for one reason only— it seemed to be rising.
+
+
+I realized that although there
+is an element of chance in every field in life, I could not base my
+operations on luck. I could be lucky once, maybe twice—but not
+constantly.
+
+
+I was happy and excited—not so much because of the money but
+simply because I had bought M & M WOOD WORKING, as I had bought
+TEXAS GULF PRODUCING, purely on the basis of its action in the market.
+I knew nothing about it nor could I find out very much. Yet I assumed
+from its continuing rise and high volume that some people knew a lot
+more about it than I did.
+
+
+This experience did more than anything to convince me that the purely           // 2 Variables: Price action and Volume
+technical approach to the market was sound. It meant that if I studied
+price action and volume, discarding all other factors, I could get
+positive results.
+
+
+I now began to try to work from this point of view. I concentrated on a         // No BIG BOYS. It's no surprise to see big companies like
+close study of price and volume and tried to ignore all rumors, tips or         // AAPL or NVDA have large volume spikes. Limit search down
+fundamental information. I decided not to concern myself with the               // to stocks where volume is within a maximum threshold
+reasons behind a rise. I figured that if some fundamental change for
+the better takes place in the life of a company, this soon shows up in
+the rising price and volume of its stock, because many people are
+anxious to buy it. If I could train my eyes to spot this upward change in
+its early stages, as in the case of M & M WOOD WORKING, I could
+participate in the stock's rise without knowing the reason for it.
+The problem was: How to detect this change? After much thinking I
+found one criterion—that was to compare stocks with people.
+This is how I began to work it out: If a tempestuous beauty were to
+jump on a table and do a wild dance, no one would be particularly
+astonished. That is the sort of characteristic behavior people have come to
+expect from her. But if a dignified matron were suddenly to do the same,
+this would be unusual and people would immediately say, "There is
+something strange here— something has happened. *'
+In the same way, I decided that if a usually inactive stock suddenly
+became active I would consider this unusual, and if it also advanced
+in price I would buy it. I would assume that somewhere behind the outof-
+the-ordinary movement there was a group who had some good
+information. By buying the stock I would become their silent partner.
+
+
+I read books, I examined stock tables, I inspected hundreds of charts. As       // Should this be considered only at buy in point, not
+I studied them I began to learn things about stock movements which I            // during potential selection process?
+had not seen before. I started to realize that stock movements were
+not completely haphazard. Stocks did not fly like balloons in any
+direction. As if attracted by a magnet, they had a defined upward or
+downward trend, which, once established, tended to continue. Within
+this trend stocks moved in a series of frames, or what I began to call
+"boxes".
+They would oscillate fairly consistently between a low and a high
+point. The area, which enclosed this up-and-down movement,
+represented the box or frame. These boxes began to exist very clearly
+for me.
+This was the beginning of my box theory, which was to lead to a
+fortune.
+This is how I applied my theory: When the boxes of a stock in which
+I was interested stood, like a pyramid, on top of each other, and my
+stock was in the highest box, I started to watch it. It could bounce
+between the top and the bottom of the box and I was perfectly
+satisfied. Once I had decided on the dimensions of the box, the stock
+could do what it liked, but only within that frame. In fact, if it did
+not bounce up and down inside that box I was worried.
+No bouncing, no movement, meant it was not a lively stock. And if it
+were not a lively stock I was not interested in it because that meant it
+would probably not rise dynamically.
+I found that a stock sometimes stayed for weeks in one box.
+I did not care how long it stayed in its box as long as it did and did
+not fall below the lower frame figure.
+
+
+the movement I was constantly
+watching for was an upward thrust toward the next box. If this
+occurred I bought the stock.
+I did not find any fixed rule as to how this takes place. It just has to be
+observed and instantly acted upon
+
+
+What I had
+to decide was the range of the box. This, of course, varied with
+different stocks. For instance, some stocks moved in a very small
+frame, perhaps not more than 10% each way. Other wide-swinging
+stocks moved in a frame between 15% and 20%. The task was to
+define the frame exactly and be sure the stock did not move decisively
+below the lower edge of the box. If it did, I sold it at once, because it
+was not acting right.
+While it stayed within its box, I considered a reaction from 55 to 50
+as quite normal. It did not mean to me that the stock was going to fall
+back. Just the contrary.
+Before a dancer leaps into the air he goes into a crouch to set
+himself for the spring. I found it was the same with stocks. They
+usually did not suddenly shoot up from 50 to 70. In other words, I
+considered that a stock in upward trend that reacted to 45 after
+reaching 50 was like a dancer crouching, ready for the spring-up.
+Later when I had more experience I also learned that this 45 position
+in a stock after a 50 high point has another important benefit. It shakes
+out the weak and frightened stockholders who mistake this reaction for
+a drop, and enables the stock to advance more rapidly.
+
+
+The major problem still remained; what was the right time to buy into
+it?
+
+
+Although I was improving in my selection and method, I was
+still somewhat of a baby in the mechanics of Wall Street, so I placed
+my problem before the broker. We discussed the 61-point telephone
+call, which had unfortunately missed me. He told me I should have
+put in an automatic "on stop" buy order. This meant the stock would
+have been bought when it rose to 61. He suggested that whenever I
+made a decision about a stock I should put in a buy order at a named
+figure. Then the stock would be bought for me without further
+consultation if the market reached this figure. This I agreed to do.
+
+
+But I decided against it and                                                    // THERE IS NO SUCH THING AS "CANNOT" IN THE MARKET
+stubbornly held on. My pride did not let me act. The prestige of my
+theory was at stake. I just kept saying this stock cannot go down any
+further. I did not know what I learned later, that there is no such thing
+as cannot in the market. Any stock can do anything. By the end of the
+next week, the profit from my three previous operations was gone. I was
+back where I had started.
+1. This experience, as I see it, was an important turning point of my
+stock-market career.
+2. It was at this point that I finally realized that
+3. There is no sure thing in the market - I was bound to be wrong
+half of the time.
+4. I must accept this fact and readjust myself accordingly - my
+pride and ego would have to be subdued.
+5. I must become an impartial diagnostician, who does not identify
+himself with any theory or stock.
+6. I cannot merely take chances. First, I have to reduce my risks as            // I CANOOT MERELY TAKE CHANCES
+far as humanly possible.
+The first step I took in that direction was to adopt what I called my
+quick-loss weapon. I already knew that I would be wrong half of the
+time. Why not accept my mistakes realistically and sell immediately at
+a small loss? If I bought a stock at 25, why not at the same time order
+the stock to be sold if it returned below 24?
+I decided to give "on-stop" orders to buy at a certain figure with an
+automatic "stop-loss" order on them in case the stock went down.
+This way, I figured, I would never sleep with a loss. If any of my
+stocks went below the price I thought they should, I would not own
+them when I went to bed that night. I knew that many times I would
+be "stopped out" for the sake of a point just to see my stock climb up
+immediately after. But I realized that this was not so important as
+stopping the big losses. Besides, I could always buy back the stock—by
+paying a higher price.
+
+
+I decided that since I could not train myself not to get scared every
+time, it was better to adopt another method. This was to hold on to a
+rising stock but, at the same time, keep raising my stop-loss order
+parallel with its rise. I would keep it at such a distance that a
+meaningless swing in the price would not touch it off. If, however, the
+stock really turned around and began to drop, I would be sold out
+immediately. This way the market would never be able to get more than
+a fraction of my profits away.
+And how to determine when to take profits?
+I realized that I would not be able to sell at the top. Anyone who
+claims he can consistently do this is lying. If I sold while the stock
+was rising, it would be a pure guess, because I could not know how
+far an advance might carry. This would be no cleverer a guess than
+anticipating that "My Fair Lady" would end its run after 200
+performances. You could also guess it would go off after 300 or
+400 performances. Why did it not go off at any of these figures?
+Because the producer would be a fool to close the show when he sees
+the theater full every night. It is only when he starts to notice empty
+seats that he considers closing the show.
+I carried the Broadway comparison through to the problem of selling.
+I would be a fool to sell a stock as long as it keeps advancing. When to
+sell then? Why, when the boxes started to go into reverse! When the
+pyramids started to tumble downwards, that was the time to close the
+show and sell out. My trailing stop-loss, which I moved up behind the
+rising price of the stock, should take care of this automatically.
+
+
+Having made these decisions, I then sat back and re-defined my
+objectives in the stock market:
+1. Right stocks
+2. Right timing
+3. Small losses
+4. Big profits
+I examined my weapons:
+1. Price and volume
+2. Box theory
+3. Automatic buy-order
+4. Stop-loss sell-order
+As to my basic strategy, I decided I would always do this: I would
+just jog along with an upward trend, trailing my stop-loss insurance
+behind me. As the trend continued, I would buy more. When the
+trend reversed? I would run like a thief.
+I realized that there were a great many snags. There was bound to be a lot
+of guesswork in the operation. My estimate that I would be right half
+of the time could be optimistic. But at last I saw my problem more
+clearly than ever. I knew that I had to adopt a cold, unemotional
+attitude toward stocks; that I must not fall in love with them when
+they rose and I must not get angry when they fell; that there are no
+such animals as good or bad stocks. There are only rising and falling
+stocks—and I should hold the rising ones and sell those that fall.
+
+
+We also decided upon one tool—this was Barton's, a weekly financial
+publication, which we arranged to have airmailed to me as soon as it
+was published. This would show me any stocks, which might be
+moving up.
+
+
+Since I had noticed it in Barron's, I forgot about it. It
+was too late for me to act. I had to wait for another opportunity.
+
+
+In the beginning, I was terribly afraid. Not that being in New York
+had helped me in the past, but to be able to communicate with Wall
+Street by telephone had given me a false feeling of security. This I
+missed for a while. It was only later, as I gradually gained experience
+in trading through cables, that I came to see the advantages of it. No
+phone calls, no confusion, no contradictory rumors—these factors
+combined gave me a much more detached view.
+As I only handled five to eight stocks at a time, I automatically separated
+them from the confusing, jungle-like movement of the hundreds of
+stocks, which surrounded them. I was influenced by nothing but the
+price of my stocks.
+I could not hear what people said, but I could see what they did. It was
+like a poker game in which I could not hear the betting, but I could
+see all the cards.
+I did not know it at the time, but later, as I became more experienced in
+the market, I realized how invaluable this was to me. Of course, the
+poker players would try to mislead me with words, and they would not
+show me their cards. But if I did not listen to their words, and
+constantly watched their cards, I could guess what they were doing.
+
+
+I finally discovered this: the inexplicable moves in my
+stocks usually coincided with some violent move in the general market.
+As I only received the quotes of my own stocks, I was completely
+disregarding the possible influence of the general market on them. This
+was no better than trying to direct a battle by only looking at one
+section of the battlefield.
+This was a very important discovery for me and I immediately acted on
+it. I asked my broker to add to the end of my cables the closing price
+of the Dow-Jones Industrial Average. This I thought would give me a
+clear enough picture of how the general market behaved.
+As I tried to relate the Dow-Jones Industrial Average to the
+movements of my own stocks, I reasoned that if the Average was
+going up, so would my stocks.
+Soon after, I found out that this was not true. To try to fit the market
+into a rigid pattern was a mistake. It seemed quite impossible to do it.
+Each stock behaved differently. There was no such thing as a mechanical
+pattern.
+I found that the relationship between the Average and
+my individual stocks were confined within certain principles, but they
+could not be measured exactly. From then on, I made up my mind to
+keep watching the Dow-Jones Industrial Average, but only in order to
+determine whether I was in a strong or a weak market. This I did
+because I realized that a general market cycle influences almost every
+stock. The main cycles like a bear or a bull market usually creep into the
+majority of them.
+
+
+Simultaneously, I tried to train my emotions. I worked it this way:
+Whenever I bought a stock, I wrote down my reason for doing so. I did
+the same when I sold it. Whenever a trade ended with a loss, I wrote
+down the reason I thought caused it. Then I tried not to repeat the same
+mistake. This is how one of my tables looked:
+                    Brought     Sold      Cause of Error
+ISLAND CREEK COAL   46          43½       Brought too late
+JOY MANUFACTURING   62          60⅝       Stop-loss too close
+EASTERN GAS & FUEL  27¾         25⅛       Overlooked weak general market
+ALCOA               118         116½      Brought on decline
+COOPER-BESSEMER     55⅜         54        Wrong timing.
+These cause-of-error tables helped me immeasurably. As I drew
+them up one after the other I was learning something from each trading.
+I started to see that stocks have characters just like people. This is
+not so illogical, because they faithfully reflect the character of the
+people who buy and sell them.
+
+
+I began to take the view that if these stocks slapped me
+twice I would refuse to touch them any more. I would just shake off
+the blow and go away to buy something I could handle better. This
+does not mean, of course, that other people with a different temperament
+from mine were not able to get on well with them - just as some people
+get along with one set of people better than they do with others.
+The experience I gained through my cause-of-error tables became one of
+the most important of all my qualifications. I now realized I could
+never have learned it from books. I began to see that it is like driving
+a car. The driver can be taught how to use the accelerator, the steering
+wheel and the brakes, but he still has to develop his own feeling for
+driving. No one can tell him how to judge whether he is too close to
+the car in front of him or when he should slow down. This he can
+only learn through experience.
+As I flew around the world and operated in Wall Street by cables, I
+slowly came to see that though I was becoming a diagnostician I could
+not be a prophet. When I examined a stock and found it strong, all I
+could say was: It is healthy now, today, at this hour. I could not
+guarantee it would not catch a cold tomorrow. My educated guesses,
+no matter how cautious they were, many times turned out to be
+wrong. But this did not upset me any more. After all, I thought, who
+was I to say what a stock should or should not do?
+
+
+I bought with bold confidence when I
+thought I was right and coldly, without hurt ego, I took my limited
+losses when I thought I was proven wrong.
+
+
+Finally, on August 26, 1957, I found myself without a single stock.
+My automatic stop-loss had sold me out of everything. In two months
+every one of my stocks had slowly turned around, and one by one had
+sagged through the bottom of their boxes. And one by one, even if it
+was only a question of half a point, they were sold.
+I did not like it, but there was nothing I could do. According to my
+theory, I just had to sit back and wait patiently until one or more of the
+stocks I had been stopped out of, or any other stocks I was watching,
+went towards a new higher box.
+Eager and anxious, I watched from the sidelines with not a dollar
+invested, while prices continued to drop.
+But no opportunity seemed to appear. What I did not know was that
+we were at the end of one phase of the great bull market. It was
+several months before this became evident and it was declared a bear
+market. Half the Wall Street analysts still discuss it. They say it was
+merely an intermediate reaction —a temporary halt in the rising market.
+They all agree, however, that prices collapsed.
+I realized that it was impossible for me to assess
+great historical turning points in the market when they began to
+happen. What fascinated me, as Wall Street prices continued to fall,
+was the gradual realization that my system of ducking out quickly
+with my stop-losses made such an assessment unnecessary.
+
+
+Look at the following table:
+                        1957     1958     1958
+                        I sold   Lowest   Highest
+                        at       price    price
+BALTIMORE & OHIO        55       22⅝      45¼
+DAYSTROM                42¼      30       39¾
+FOSTER WHEELER          59½      25⅛      39⅛
+AEROQUIP                27½      16⅞      25¾
+ALLIED CONTROL          48¼      33½      46½
+DRESSER INDUSTRIES      54½      33       46⅝
+JOY MANUFACTURING       68       38       54½
+ALLEGHENY LUDLUM        56½      30⅛      49⅜
+When I looked at this table, I thought this: If my stop-losses had not
+taken me out of the market I could have lost about 50% of my
+investment. I would have been like a man in a cage, locked in with
+my holdings and missing my opportunity to make a fortune. The
+only way I could have escaped would have been by smashing out,
+taking a 50% loss, possibly ruining myself, and gravely impairing my
+confidence for future deals.
+I could, of course, have bought these stocks and "put them away.'* This
+is a classic solution among people who call themselves conservative
+investors. But by now I regarded them as pure gamblers. How can they
+be non-gamblers when they stay with a stock even if it continues to
+drop? A non-gambler must get out when his stocks fall. They stay in
+with the gambler's eternal hope of the turn of a lucky card.
+I thought of the people who paid 250 for NEW YORK CENTRAL in 1929.
+If they were still holding it today it was worth about 27. Yet they
+would be indignant if you called them gamblers!
+When I went into the accounts more closely I found I had the
+unenviable distinction of coming out of the greatest bull market in
+history with a lot of experience, a great amount of knowledge, much
+more confidence—and a net loss of $889.
+
+
+There was no doubt in my mind now that I could not make money by
+buying a stock and then trying to cheer it on.
+
+
+The situation reminded me of George Bernard Shaw's remark at the
+opening night of one of his plays. After the curtain fell everyone
+cheered and clapped except one man who booed. G.B.S. went up to him
+and said: "Don't you like my play?"
+The man replied, "No, I don't." Whereupon Shaw said: "Neither do I,
+but what can the two of us do against all that crowd?"
+So I accepted everything for what it was—not what I wanted it to be. I
+just stayed on the sidelines and waited for better times to come.
+
+
+The period that followed I spent like a runner limbering up for the
+race. Week after week, while I did not have any stock and the market
+was in a steady downtrend, I followed the quotations in Barron's. I
+tried to detect those stocks that resisted the decline. I reasoned that if
+they could swim against the stream, they were the ones that would
+advance most rapidly when the current changed.
+
+
+On closer examination, I found the majority of these were companies
+whose earning trends pointed sharply upward. The conclusion was
+obvious: capital was flowing into these stocks, even in a bad market.
+This capital was following earning improvements as a dog follows a
+scent. This discovery opened my eyes to a completely new
+perspective.
+I saw that it is true that stocks are the slaves of earning power.
+Consequently, I decided that while there may be many reasons behind
+any stock movement, I would look only for one: improving earning
+power or anticipation of it. To do that, I would marry my technical
+approach to the fundamental one. I would select stocks on their
+technical action in the market, but I would only buy them when I
+could give improving earning power as my fundamental reason for
+doing so.
+This was how I arrived at my techno-fundamentalist theory, which I
+am still using today.
+As to the practical application, I decided to take a 20-year view. That
+did not mean I wanted to hold a stock for 20 years. Nothing was more
+contrary to my intentions. But I looked out for those stocks, which
+were tied up with the future and where I could expect that
+revolutionary new products would sharply improve the company's
+earnings.
+
+
+As I flew around the world, I was constantly searching for stocks that
+would climb into the stratosphere because of the vision of their
+future. This attitude was a preparation for what I suppose you could
+call high-territory trading. I looked for stocks that I thought could
+make new highs and I decided to give them my full attention when
+they had climbed on to the launching pad and were preparing to
+rocket up. Now these stocks would be more expensive than ever
+before and so they would look too dear to the uninitiated. But they
+could become dearer. I made up my mind to buy high and sell higher.
+
+
+I closely observed their price action, and I was on the alert for any
+unusual activity as well. I had not forgotten the importance of volume.
+
+
+I did suspect one thing, however—and that was that the leaders in
+the previous market would probably not lead again. I felt sure they
+had fulfilled their place in history and they would not—for the time
+being—reach the same dizzy heights that had brought so much money
+to the investors who had followed them.
+
+
+I did not know then that they were the manufacturers of a particular
+brand of filter-tip cigarettes and the filter-tip craze was about to sweep
+America, causing their production to leap up astronomically. Out in
+Saigon, all I knew was that LORILLARD began to emerge from the swamp
+of sinking stocks like a beacon. In spite of the bad market, it rose from
+17 until, in the first week of October; it established itself in the
+narrow box 24/27 . Its volume for that week was 126,700 shares,
+which sharply contrasted with its usual 10,000 shares earlier in the year.
+
+
+I felt I
+had the right stock. Now it was a question of getting into it with more
+money at the right time.
+
+
+I also wavered for a moment, on the verge of selling, but I decided
+against it. By now I had trained myself to be patient and, although I
+could have taken an easy $20 per share profit on my earliest purchase,
+I sat back determined not to take too quick a profit.
+
+
+The
+stock seemed to have lost its will to rise. It looked as though its last
+pyramid would hesitate on the brink of going into reverse. It almost
+seemed ready to tumble. So as not to get caught in any collapse, I
+decided to raise my stop-loss to the unusually narrow margin of 36⅜.
+
+
+What amazed me was the movement of E. L. BRUCE on Street. It usually
+traded below 5,000 shares a week. Then it suddenly woke up and started
+to move. In the second week of April 1958, its volume rose to an
+astonishing 19,100 shares. Thereafter the weekly volume climbed to
+41,500—54,200—76,500 shares, with the price jumping 5 to 8 points
+weekly without any sign of downward reaction.
+
+
+It was obvious even in faraway India that something fantastic was
+happening on the American Stock Exchange. I had to fight a hard
+battle with myself not to phone New York and find out what was
+going on. No, I said to myself as I felt like calling my brokers, that
+will only mean rumors and you may do something silly.
+
+
+I had made over $325,000 in nine months' investment,
+and I was determined not to lose it by a wrong move. So many
+operators have made big money in nine months and lost it in nine
+weeks. I decided this would not happen to me. The first step I took was
+to withdraw half of my profits from the market.
+As so often after a coup, I had very little success for a
+month or two immediately afterwards
+
+
+His argument was: What was the point of buying a stock if it
+might go down? He reckoned you should only buy stock that was sure
+to rise—as if anyone could be sure.
+
+
+Finally, I decided not to sell. It was the best example of my new
+market technique and it was anything but easy to do. By the time I
+arrived back at my hotel I was exhausted. I must have looked more
+like a man about to commit suicide than one who had just made himself
+a small fortune.
+But I was proved right, THIOKOL continued to rise and by making that
+decision in Paris, I was able to hold on and make much more money
+out of the stock.
+
+
+The truth was that as my pocket had strengthened, my head had
+weakened. I became over-confident, and that is the most dangerous state
+of mind anyone can develop in the stock market. It was not long before I
+received the bitter lesson the market always hands out to those who
+think they can carelessly master it.
+
+
+I was fascinated by my first visit to the office. The boardroom was
+large, with chairs placed in front of an ever-moving little machine, the
+stock-ticker. The atmosphere was exciting, filled with electricity. The
+people in the room, like hangers-on in Monte Carlo, were nervous,
+exalted. There was an air of action, bustle, and noise. Tickers ticking,
+typewriters pounding, telegraph machines clacking, clerks busily rushing
+around. From every direction I heard sentences like: "GOODYEAR doesn't
+look good to me." "I am getting out of ANACONDA." "The market is
+ripe for a reaction."
+The first day I was quite unperturbed by this taut, electric atmosphere.
+With my success behind me I felt I was above the anxieties, hopes and
+fears of these tense people. But this did not last long. As I began
+trading day to day from the boardroom, I gradually abandoned my
+detachment and started to join them. I opened my ears to the
+confusing combination of facts, opinions and gossip. I read the
+market letters. I also started to answer questions like, "What do you
+think of the market?" or "What do you know that's cheap?" All this
+had a deadly effect on me.
+In a few days of trading, I threw overboard everything I had learned
+over the past six years. I did everything I had trained myself not to
+do. I talked to brokers. I listened to rumors. I was never off the
+ticker.
+It was as if the "get-rich-quick" demon had gotten hold of me. I
+completely lost the clear perspective I had so carefully built up
+through my cables. Step by step I led myself along a path where I
+began to lose my skill.
+The first thing that deserted me was my sixth sense. I did not "feel"
+anything. All I could see was a jungle of stocks running up and down
+without rhyme or reason. Then my independence went. I gradually
+abandoned my system and adopted the attitude of the others. The first
+thing I knew, I was following the crowd. My reason forsook me and
+emotion took over completely.
+It is easier to understand how difficult it was for me to cling to my
+system if I explain it this way: Yell "fire" in a crowded theatre and what
+happens? People rush for the exit, killing, injuring each other. A
+drowning man will struggle, grasp his would-be rescuer and perhaps
+pull him under too. They are unreasonable, wrong attitudes, yet instinct
+will dictate them.
+As I followed the crowd I also started to act like this. Instead of being a
+lone wolf, I became a confused, excited lamb milling around with
+others, waiting to be clipped. It was impossible for me to say "no"
+when everybody around me was saying "yes". I got scared when they
+got scared. I became hopeful when they were hopeful.
+Nothing like this, not even in my first novice years, had ever happened
+to me. I lost all my skill and control. Everything I touched went
+wrong.
+I behaved like a complete amateur. The careful system I had built up
+collapsed around me. Every transaction ended in disaster. I put in
+dozens of contradictory orders. I bought stocks at 55. They went back to
+51. I hung on. Stop-loss? That was the first thing I threw away.
+Patience? Judgment? I had none. Boxes? I forgot about them.
+As the days went by the vicious circle of my operations started to
+look like this:
+I BOUGHT AT THE TOP As
+   Soon as I bought
+      The stock started to drop I
+         Became frightened
+            AND SOLD AT THE BOTTOM
+               As soon as I sold
+                  The stock started to rise I became greedy
+                     AND BOUGHT AT THE TOP
+It was a period of complete disaster. I lost $100,000 in a few weeks. A
+detailed list of my trading at this time reads like a lunatic's chronicle.
+I can still hardly believe it. Now I know that it was caused by egotism
+leading to vanity leading to over-confidence, which in turn led to
+disaster. It was not the market that beat me. It was my own unreasoning
+instincts and uncontrolled emotions.
+
+
+The plain fact was that I was reading too much, trying to do too much.
+That is why I rapidly reached the stage where I could read the
+figures on the stock market quotations but they no longer told me
+anything. Not long afterwards came an even worse phase. Haunted by
+never-ending losses, terrified by the confusion, racked by rumors, I got
+so I could not even see the figures. My coordination broke down. I used
+to pore all day over columns of figures, which my eyes scanned, but I
+could not assimilate. My mind had become blurred. This last phase really
+frightened me. I felt like a drunk who loses touch with reality and
+cannot understand why.
+At the end of a few disastrous weeks, I sat down soberly to examine the
+reasons why this should have happened to me. Why should I have the
+touch in Hong Kong, Calcutta, Saigon and Stockholm, and lose it when
+I was within half a mile of Wall Street? What was the difference?
+There was no easy solution to the problem and for a long time I was
+baffled. Then one day, as I sat in the Plaza Hotel afraid to make a
+telephone call, I suddenly realized something. When I was abroad, I
+visited no boardrooms, talked to no one, received no telephone calls,
+watched no ticker.
+The solution was whispering to me but at first I could not credit it. It
+was so surprising, so simple and yet so extraordinary that I could hardly
+believe it. It was: My ears were my enemy.
+It dawned on me like a revelation that when I was traveling abroad I had
+been able to assess the market, or rather the few stocks in which I was
+interested, calmly, neutrally, without interruption or rumor, completely
+without emotion and ego.
+
+
+This is how I worked it out. I asked my brokers to send out their
+telegrams after Wall Street closing time, so they would reach me at 6
+P.M. This is about the time I get up—the result of performing in
+nightclubs for many years. Meanwhile, during the day, the telephone
+operator is instructed not to let any calls through.
+In this way everything happens in Wall Street while I am in bed. I am
+sleeping while they are working, and they cannot reach me nor worry
+me. My delegate, the stop-loss order, represents me in case something
+unforeseen happens.
+At 7 P.M. I start to work studying my daily telegram and deciding
+what my future dealings will be. Before I do this, I buy a copy of an
+afternoon paper that contains Wall Street closing prices. I tear out the
+pages giving the day's quotations and throw the rest of the financial
+section away. I do not wish to read any financial stories or
+commentaries, however well informed. They might lead me astray.
+Then, with my telegram and my page out of the newspaper, I settle
+down to work while Wall Street sleeps.
+
+
+You will notice that in
+each case I was successful in taking larger profits than losses in proportion to
+the amounts invested
+
+
+Of course, it could not last. The governors of the New York Stock
+Exchange decided to suspend all stop orders. The effect of this was that
+the majority of traders left the stock alone. They would not buy and sell
+a stock where they could not protect themselves. It also meant that I
+was automatically out of the stock myself. They had taken my most
+powerful tool away, and I could not work without it.
+
+
+On each of these stocks I put a stop-loss order of 10 per cent below
+buying price.
+I was fully aware that these stop-losses were vague and too mechanical.
+It was a deliberate, if clumsy, method. I purposely used this system
+because I knew sooner or later it would eliminate those of the four that
+were weakest.
+
+
+It was the fourth week of May when I proceeded to switch more than
+$1,000,000 into the two stronger stocks. These were my total
+purchases:
+
+ZENITH RADIO
+500 shares at        104      $ 52,247.00
+1,500 shares at      99¾      150,359.70
+1,000 shares at      104      104,494.00
+1,000 shares at      105¼     105,745.30
+1,500 shares at      107½     161,996.25
+----------------------------------------
+Total 5,500 shares           $574,842.25
+
+FAIRCHILD CAMERA
+500 shares at        128      $64,259.00
+1,000 shares at      123¼     123,763.30
+1,000 shares at      125      125,515.00
+1,000 shares at      126¼     126,766.30
+1,000 shares at      127      127,517.00
+----------------------------------------
+Total 4,500 shares            $567,820.60
+
+
+I was also faced with the same dilemma I had known before: Should I
+sell? Should I get out altogether?
+The answer this time was easy. It was the old tried and trusted answer: I
+did not have any reason to sell a rising stock. I would just continue to
+jog along with the trend, trailing my stop-loss behind me. As the trend
+increased, I would buy more. If the trend reversed? I would, as ever,
+flee like a disturbed burglar.
+I put new stop-losses on all my stocks so that if they dropped while I
+was on my way to Europe I would be sold out and my two million
+would remain intact.
+I felt content and assured as I rode up Fifth Avenue in a taxi after
+leaving my brokers.
+I walked into the lobby of the Plaza Hotel, automatically bought an
+evening paper, tore out the Wall Street closing prices, threw the rest of
+the newspaper away, picked up my 6 P.M. telegram and went up in the
+elevator.
+In my room I opened the telegram, spread out the sheet of newspaper,
+and sat back with a happy sigh. Not only because I had made two
+million dollars but because I was doing what I liked best.
+I was working while Wall Street slept.
+
+
+
+Further Investigation: -----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+June 15, 2016 - I've got a working program that analyzes volume spikes, 52 week high, and an overall
+analysis of whether the stock is in a bull or bear state. It has been interesting to see the
+results, however, I decided to gather more information about how the method should be implimented.
+It is easy to see where the method would have been successful in hindsight, but the trick is
+knowing when to get in and when to get out. The following exerpts are some extracts about
+the Darvas mehod:
+
+
+www.investopedia.com/articles/trading/08/darvas.asp ------------------------------------------------
+-Fundamental Screen: Industries of tomorrow
+
+-The box is created when the stock trades within a rectangle formation. This is characterized by
+ prices trading within a narrow range for at least three weeks. To quantify the box, traders should
+ look for stocks in which the difference between the high and the low price over the past four weeks
+ is less than 10% of the stock's high during that time. As a formula, it can be written as:
+ (100 * ((High – Low) / High)) < 10
+
+-The buy should be taken at the market's open the morning after the stock closes outside the box by
+ at least half a point on a volume that is greater than the average 30-day volume. The initial stop
+ should be set a quarter point below the lowest price of the box. It should be raised as new boxes
+ form, always a quarter point below the low.
+
+
+www.darvastrader.com/2012/09/13/the-classic-book-by-nicolas-darvas-finally-gets-revised-and-updated/
+-...one of the big mistakes traders make today in trying to apply the Darvas System is being too
+ focused on the specifics of his famous “Darvas Boxes.”  The real key has always been the
+ recognition of valid support and resistance levels.  “Darvas Boxes” help with this recognition,
+ but there are several other ways – often more appropriate ways – to evaluate these levels.  For
+ example, other proven chart patterns, significant moving averages, etc.
+
+-...do not focus on the money you can make, focus on the money you could lose.  ALWAYS control your
+ positions sizes and cut your losses at your predetermined stop. If the support level fails, get
+ out.
+
+
+www.swing-trade-stocks.com/trading-methods-darvas-trading.html -------------------------------------
+-For a stock to qualify as a potential Darvas trade, it first has to exhibit a proof of changed
+ behavior in the form of a recent volume change of at least a 400% increase compared to the average
+ daily volume for the past few weeks. The stock must also be rising in price and make a new yearly
+ high. The Darvas Box upper and lower boundaries will then form if this high is not touched or
+ penetrated for the next 3 consecutive trading days followed by a retracement low that’s not touched
+ or penetrated for a further 3 days in a row, as shown in the picture above. Darvas tells us that
+ sometimes the top and bottom of the box may form on the same day. In such a case, the requirement
+ is that neither the high nor the low of that day are touched or penetrated for 3 consecutive trading
+ days.
+
+-Once a box forms, a buy stop order is placed to purchase the stock the moment it pushes through the
+ top of the box. At the same time, an automatic stop loss order is entered just below the bottom of
+ the box to protect the position.
+
+-Do not be afraid of getting stopped out! Many times, Darvas would be stopped out for the sake of a
+ point just to see the stock climb up immediately after. But he realized that this was not as
+ important as protecting his position and profits! If sold out, consider buying the stock back on
+ the break of a fresh new high.
+
+
+http://www.boxcharts.com/darvas-box-theory-explained-1.html ---------------------------------------
+-The Darvas box theory is a momentum strategy for use with a short-term trading style. When I saw
+ short-term, I don't mean day trade, although I suppose that is possible as well. I mean short-term
+ in the sense that one tends to hold the stock for less than a year. However, the exit points are
+ not very well defined by Darvas. His only remark is that he sells when the stock penetrates the
+ box to the downside.
+
+-According to Darvas, it all boiled down to one thing: "improving earnings power or anticipationg
+ of it". That's about as fundamental as Darvas gets in his book.
+
+-To identify a Darvas box, one would first locate the highest price that a stock reached during a
+ certain period. Then, if that price is not breached to the upside for three days, Darvas would
+ consider it to be the top of the box. It is only after locating the top of the box that one begins
+ to search for the bottom. Darvas was adament about this point. Locating the bottom of the box is
+ essentially the same as looking for the top, but in reverse. Once the box has been defined, says
+ Darvas, the stock should bounce around in it. If it does not, he would be worried. If, at some
+ point in the future, the stock pierces the top of the established box ('by a tick' says Darvas),
+ then one would immediately buy the stock.
+
+Arguments===========================================================================================
+====================================================================================================
+
+Output==============================================================================================
+====================================================================================================
+
+Dependencies========================================================================================
+====================================================================================================
+CURL
+Use Curl library on linux:
+1. Download latest curl source package
+2. Use the following commands
+  ./configure
+  make
+  make install
+3. Curl is now installed on the system
+4. Link to it when using g++, by adding -lcurl to end of compile command

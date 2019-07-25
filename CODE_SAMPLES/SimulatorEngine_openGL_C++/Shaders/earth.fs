@@ -1,0 +1,78 @@
+#version 330 core
+
+// Interpolated values from the vertex shaders
+in vec2 UV;
+in vec3 Position_worldspace;
+in vec3 Normal_cameraspace;
+in vec3 EyeDirection_cameraspace;
+in vec3 LightDirection_cameraspace;
+in vec4 ShadowCoord;
+
+// Ouput data
+out vec3 color;
+
+// Values that stay constant for the whole mesh.
+uniform sampler2D Texture_0;
+uniform sampler2D Texture_1;
+uniform sampler2D Texture_2;
+uniform sampler2DShadow DepthTexture_0;
+uniform mat4 MV;
+uniform mat4 Light_0;
+
+void main(){
+
+   vec3 LightPos = vec3(Light_0[0].x, Light_0[0].y, Light_0[0].z);
+	vec3 LightColor = vec3(Light_0[1].x, Light_0[1].y, Light_0[1].z);
+	float LightPower = Light_0[0][3];
+   
+	// Material properties
+	vec3 MaterialDiffuseColor;
+	vec3 MaterialAmbientColor = vec3(0.2,0.2,0.2);
+	vec3 MaterialSpecularColor = vec3(0.7,0.7,0.7);
+
+	// Distance to the light
+	float distance = length( LightPos.xyz - Position_worldspace );
+
+	// Normal of the computed fragment, in camera space
+	vec3 n = normalize( Normal_cameraspace );
+	// Direction of the light (from the fragment to the light)
+	vec3 l = normalize( LightDirection_cameraspace );
+	// Cosine of the angle between the normal and the light direction, 
+	// clamped above 0
+	//  - light is at the vertical of the triangle -> 1
+	//  - light is perpendicular to the triangle -> 0
+	//  - light is behind the triangle -> 0
+	float cosTheta = dot( n,l );
+	
+	// Eye vector (towards the camera)
+	vec3 E = normalize(EyeDirection_cameraspace);
+	// Direction in which the triangle reflects the light
+	vec3 R = reflect(-l,n);
+	// Cosine of the angle between the Eye vector and the Reflect vector,
+	// clamped to 0
+	//  - Looking into the reflection -> 1
+	//  - Looking elsewhere -> < 1
+	float cosAlpha = clamp( dot( E,R ), 0,1 );
+   
+   float visibility = 0;
+   float bias = 0.005*tan(acos(cosTheta));
+   bias = clamp(bias, 0,0.01);
+   
+   //visibility = texture( DepthTexture_0, vec3(ShadowCoord.xy, (ShadowCoord.z)/ShadowCoord.w) );
+   visibility = 1.0;
+   for (int i=0;i<8;i++){
+		visibility -= 0.25 * (1.0 - texture( DepthTexture_0, vec3(ShadowCoord.xy,  (ShadowCoord.z - .05)/ShadowCoord.w) ));
+	}
+   
+   vec3 colorNight = texture2D( Texture_1, UV ).rgb;
+   vec3 colorDay = texture2D( Texture_0, UV ).rgb;
+   vec3 specular = texture2D( Texture_2, UV ).rgb;
+   
+   color = MaterialAmbientColor * texture2D( Texture_0, UV ).rgb;
+   if(visibility > 0){
+      color += texture2D( Texture_0, UV ).rgb * LightColor * LightPower * cosTheta / (distance*distance);
+		color += MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5) * specular.r / (distance*distance);
+   }
+   
+   color = specular;
+}

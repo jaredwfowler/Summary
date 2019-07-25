@@ -1,0 +1,65 @@
+/***************************************************************************************************
+************************         |\/| o  _ ._ _  |  _   _   _.  _           ************************
+************************         |  | | (_ | (_) | (/_ (_| (_| (_ \/        ************************
+************************                                _|        /         ************************
+************************                      Estd. 2015                    ************************
+****************************************************************************************************
+****************************************************************************************************
+**** The use, disclosure, reproduction, modification, transfer, or transmittal of this work for ****
+**** any purpose in any form or by any means without the written permission of Microlegacy is   ****
+**** strictly prohibited.                                                                       ****
+****                                                                                            ****
+**** Confidential, Unpublished Property of Microlegacy.                                         ****
+**** Use and Distribution Limited Solely to Authorized Personnel.                               ****
+****                                                                                            ****
+**** All Rights Reserved                                                                        ****
+****************************************************************************************************
+CREATOR ********************************************************************************************
+****************************************************************************************************
+****  Name:  Jared Fowler
+**** Title:  Co-Founder of Microlegacy
+****  Date:  March 12, 2016
+**** Email:  jaredwfowler@hotmail.com
+****************************************************************************************************
+VERSION ********************************************************************************************
+****************************************************************************************************
+** Version #: 1.0
+** Version Date: March 12, 2016
+** Revision Personel: JFowler, 
+****************************************************************************************************
+
+About===============================================================================================
+====================================================================================================
+The Scharf method is used to determine plausable strike prices at which to sell stock options. Stock
+history and option information is downloaded, parsed, analyzed, and results are then written to 
+files. 
+
+Arguments===========================================================================================
+====================================================================================================
+An input file which contains a list of stock symbols we wish to get information about. The file 
+should be in the same directory as the executable. The name of the file is optionsList.txt .  Stock
+ticker values should be written, 1 per line, with the final value having a newline separator.
+
+to run:
+$ ./scharf <output_folder>
+
+example:
+If I wanted to output the results to folder "output/scharf" I would use:
+$ ./scharf ./output/scharf
+
+Output==============================================================================================
+====================================================================================================
+A collection of files containing individual stock history and option data.  Final output which
+contains the calculated results.
+
+Dependencies========================================================================================
+====================================================================================================
+CURL
+Use Curl library on linux:
+1. Download latest curl source package
+2. Use the following commands
+  ./configure
+  make
+  make install
+3. Curl is now installed on the system
+4. Link to it when using g++, by adding -lcurl to end of compile command

@@ -1,0 +1,508 @@
+{
+    "WEBSITE_DOMAIN_NAME": {
+        "title": "WEBSITE_DOMAIN_NAME",
+        "info": "Full domain name including the www. Example: www.mysite.com",
+        "type": "text",
+        "value":"www.conejopowerwash.com"
+    },
+
+    "WEBSITE_TITLE": {
+        "title": "WEBSITE_TITLE",
+        "info": "Title of website to appear on browser bar and websearch.",
+        "type": "text",
+        "value": "Conejo Power Wash"
+    },
+
+    "WEBSITE_DESCRIPTION": {
+        "title": "WEBSITE_DESCRIPTION",
+        "info": "This is the description of your webiste which will be shown publicly when a general websearch is done.",
+        "type": "text",
+        "value": "Residential and Commercial Pressure Washing Services"
+    },
+
+    "WEBSITE_KEYWORDS": {
+        "title": "WEBSITE_KEYWORDS",
+        "info": "These are the keywords which help search engines (ie GOOGLE) identify what your website is all about. The more keywords you have, the more information search engines will have to bring up your website on a user web search.",
+        "type": "text",
+        "value": "pressure wash, power wash, commercial pressure wash, commercial power wash, residential pressure wash, residential power wash, roof cleaning, tile roof cleaning, window cleaning, window washing, sealer, sealing, solar panel cleaning"
+    },
+
+    "ADDRESS": {
+        "title": "ADDRESS",
+        "info":"Company/Organization address.",
+        "type": "ftext",
+        "value": [
+            {
+                "class": "",
+                "style": "",
+                "text": ""
+            }
+        ]
+    },
+
+    "PHONE": {
+        "title": "PHONE",
+        "info": "Company/Organization phone number.",
+        "type": "text",
+        "value": "(805) 231-5571"
+    },
+
+    "EMAIL": {
+        "title": "EMAIL",
+        "info": "Company/Organization email address.",
+        "type": "text",
+        "value": "rob@conejopowerwash.com"
+    },
+
+    "WEBSITE_LOGO": {
+        "title": "WEBSITE_LOGO",
+        "info": "Image path to logo.",
+        "type": "text",
+        "value": "/images/logo.gif"
+    },
+
+    "WEBSITE_BACKGROUND_IMAGE": {
+        "title": "WEBSITE_BACKGROUND_IMAGE",
+        "info": "Background image. Auto-adjusted to fit screen by selecting best aspect ratio for screen.",
+        "type": "backgroundImage",
+        "zindex": -20,
+        "initRefreshCount": 40,
+        "initRefreshInterval": 250,
+        "visibleAfterCount": 4,
+        "value": [
+            {
+                "ratio": 1.33,
+                "image": "/images/background_4_3.jpg"
+            },
+
+            {
+                "ratio": 1.78,
+                "image": "/images/background_16_9.jpg"
+            },
+
+            {
+                "ratio": 4,
+                "image": "/images/background_4_1.jpg"
+            },
+            
+            {
+                "ratio": 2,
+                "image": "/images/background_2_1.jpg"
+            },
+
+            {
+                "ratio": 1,
+                "image": "/images/background_1_1.jpg"
+            },
+
+            {
+                "ratio": 0.5,
+                "image": "/images/background_1_2.jpg"
+            }
+        ]
+    },
+
+    "SERVICES": {
+        "title": "SERVICES",
+        "info": "Services on the Service page.",
+        "type": "cards",
+        "col": "col s12 m6 l4",
+        "value": [
+            {
+                "title": "Pressure Washing",
+                "info": "A super powerful wash.",
+                "image": "/images/PW 1.jpg"
+            },
+
+            {
+                "title": "Roof Cleaning",
+                "info": "",
+                "image": "/images/Roof 1.jpg"
+            },
+
+            {
+                "title": "Commercial",
+                "info": "",
+                "image": "/images/Harley 1.jpg"
+            },
+
+            {
+                "title": "Window Cleaning",
+                "info": "",
+                "image": "/images/Windows 1.jpg"
+            },
+
+            {
+                "title": "We Seal Roofs, Stone & Concrete",
+                "info": "",
+                "image": "/images/Seal Roof 1.jpg"
+            },
+
+            {
+                "title": "Solar Panel Cleaning",
+                "info": "",
+                "image": "/images/Solar 1.jpg"
+            }
+        ]
+    },
+
+    "VIDEOS": {
+        "title": "VIDEOS",
+        "info": "Videos on the Video page.",
+        "type": "videos",
+        "col": "col s12 m6 l4",
+        "value": [
+            {
+                "url": "//www.youtube.com/embed/J1bV2Wdc-ss"
+            },
+
+            {
+                "url": "//www.youtube.com/embed/MSC7G1mgJfE"
+            },
+
+            {
+                "url": "//www.youtube.com/embed/KA23w0poHdk"
+            },
+
+            {
+                "url": "//www.youtube.com/embed/toSV9VAio8o"
+            }
+        ]
+    },
+
+    "HOME_SLIDER": {
+        "title": "HOME_SLIDER",
+        "info": "Home page slider bar. Great way to advertise and bring your page to life.",
+        "type": "slider",
+        "col": "col s12 m12 l12",
+        "interval": 4000,
+        "value": [
+            {
+                "title": "Roofs, Patios, Driveways, Sidewalks ...",
+                "info": "",
+                "align": "center-align",
+                "image": "/images/_roofMain.jpg"
+            },
+
+            {
+                "title": "Decks, Docks, Stables, Furniture ...",
+                "info": "",
+                "align": "left-align",
+                "image": "/images/ba_11b.jpg"
+            },
+
+            {
+                "title": "Anything else that needs a good cleaning!",
+                "info": "",
+                "align": "right-align",
+                "image": "/images/ss_1.jpg"
+            },
+
+            {
+                "title": "We Also Seal!",
+                "info": "BRICK, STONE, CONCRETE & TILE ROOFS",
+                "align": "center-align",
+                "image": "/images/ba_12b.jpg"
+            }
+        ]
+    },
+
+    "HOME_CAROUSEL": {
+        "title": "HOME_CAROUSEL",
+        "info": "Home page carousel.",
+        "type": "carousel",
+        "col": "col s12 m12 l12",
+        "value": [
+            "/images/ss_1.jpg",
+            "/images/ss_2.jpg",
+            "/images/ss_3.jpg",
+            "/images/ss_4.jpg",
+            "/images/ss_6.jpg",
+            "/images/ss_9.jpg",
+            "/images/ss_10.jpg",
+            "/images/ss_11.jpg",
+            "/images/ss_12.jpg",
+            "/images/ss_18.jpg",
+            "/images/ss_19.jpg",
+            "/images/ss_20.jpg"
+        ]
+    },
+
+    "HOME_TEXT_1": {
+        "title": "HOME_TEXT_1",
+        "info": "",
+        "type": "ftext",
+        "value": [
+            {
+                "class": "center-align header_1",
+                "style": "",
+                "text": "WE MAKE EVERYTHING LOOK NEW AGAIN!"
+            }
+        ]
+    },
+
+    "HOME_TEXT_2": {
+        "title": "HOME_TEXT_2",
+        "info": "",
+        "type": "ftext",
+        "value": [
+            {
+                "class": "center-align header_1",
+                "style": "",
+                "text": "RESIDENTIAL & COMMERCIAL<br>FULLY INSURED, LICENSED & BONDED!"
+            },
+
+            {
+                "class": "center-align header_1",
+                "style": "",
+                "text": "We Pressure Wash It All!"
+            },
+            
+            {
+                "class": "center-align header_2",
+                "style": "",
+                "text": "ROOFS, HOMES, BUSINESSES, PATIOS,  BRICK, STONE, TILE, DECKS, DRIVEWAYS, SIDEWALKS, FENCES, STABLES, BOAT DOCKS, AWNINGS, PERGOLAS, PATIO FURNITURE, UTILITY PADS, DUMPSTER PADS AND JUST ABOUT ANYTHING ELSE THAT NEEDS A GOOD CLEANING!<br><br><b>WE ALSO SEAL BRICK, STONE, CONCRETE & TILE ROOFS!</b>"
+            },
+
+            {
+                "class": "center-align header_2",
+                "style": "",
+                "text": "<br><br>SERVING THOUSAND OAKS, WESTLAKE VILLAGE, AGOURA, NEWBURY PARK, SANTA ROSA VALLEY, VENTURA, CAMARILLO, MALIBU, MOORPARK, CALABASAS, WEST SAN FERNANDO VALLEY & SURROUNDING AREAS"
+            }
+        ]
+    },
+
+    "GALLERY_BA": {
+        "title": "GALLERY_BA",
+        "info": "Gallery page. Before and after.",
+        "type": "carousel",
+        "col": "col s12 m12 l12",
+        "value": [
+            "/images/ba_1a.jpg",
+            "/images/ba_1b.jpg",
+            "/images/ba_2a.jpg",
+            "/images/ba_2b.jpg",
+            "/images/ba_3a.jpg",
+            "/images/ba_3b.jpg",
+            "/images/ba_4a.jpg",
+            "/images/ba_4b.jpg",
+            "/images/ba_5a.jpg",
+            "/images/ba_5b.jpg",
+            "/images/ba_6a.jpg",
+            "/images/ba_6b.jpg",
+            "/images/ba_7a.jpg",
+            "/images/ba_7b.jpg",
+            "/images/ba_8a.jpg",
+            "/images/ba_8b.jpg",
+            "/images/ba_9a.jpg",
+            "/images/ba_9b.jpg",
+            "/images/ba_10a.jpg",
+            "/images/ba_10b.jpg",
+            "/images/ba_11a.jpg",
+            "/images/ba_11b.jpg",
+            "/images/ba_12a.jpg",
+            "/images/ba_12b.jpg",
+            "/images/ba_13a.jpg",
+            "/images/ba_13b.jpg",
+            "/images/ba_13c.jpg",
+            "/images/ba_13d.jpg",
+            "/images/ba_13e.jpg",
+            "/images/ba_13f.jpg",
+            "/images/ba_14a.jpg",
+            "/images/ba_14b.jpg",
+            "/images/ba_15a.jpg",
+            "/images/ba_15b.jpg",
+            "/images/ba_16a.jpg",
+            "/images/ba_16b.jpg",
+            "/images/ba_17a.jpg",
+            "/images/ba_17b.jpg",
+            "/images/ba_18a.jpg",
+            "/images/ba_18b.jpg",
+            "/images/ba_19a.jpg",
+            "/images/ba_19b.jpg",
+            "/images/ba_20a.jpg",
+            "/images/ba_20b.jpg",
+            "/images/ba_21a.jpg",
+            "/images/ba_21b.jpg",
+            "/images/ba_22a.jpg",
+            "/images/ba_22b.jpg",
+            "/images/ba_23a.jpg",
+            "/images/ba_23b.jpg",
+            "/images/ba_24a.jpg",
+            "/images/ba_24b.jpg",
+            "/images/ba_25a.jpg",
+            "/images/ba_25b.jpg"
+        ]
+    },
+
+    "GALLERY_BA_TEXT": {
+        "title": "GALLERY_BA_TEXT",
+        "info": "Gallery page. Before and after text.",
+        "type": "ftext",
+        "value": [
+            {
+                "class": "center-align header_1",
+                "style": "",
+                "text": "Before and After"
+            }
+        ]
+    },
+
+    "GALLERY_SS": {
+        "title": "GALLERY_SS",
+        "info": "Gallery page. Side-by-Side.",
+        "type": "carousel",
+        "col": "col s12 m12 l12",
+        "value": [
+            "/images/ss_1.jpg",
+            "/images/ss_2.jpg",
+            "/images/ss_3.jpg",
+            "/images/ss_4.jpg",
+            "/images/ss_5.jpg",
+            "/images/ss_6.jpg",
+            "/images/ss_7.jpg",
+            "/images/ss_8.jpg",
+            "/images/ss_9.jpg",
+            "/images/ss_10.jpg",
+            "/images/ss_11.jpg",
+            "/images/ss_12.jpg",
+            "/images/ss_13.jpg",
+            "/images/ss_14.jpg",
+            "/images/ss_16.jpg",
+            "/images/ss_17.jpg",
+            "/images/ss_18.jpg",
+            "/images/ss_19.jpg",
+            "/images/ss_20.jpg",
+            "/images/ss_21.jpg"
+        ]
+    },
+
+    "GALLERY_SS_TEXT": {
+        "title": "GALLERY_SS_TEXT",
+        "info": "Gallery page. Side by side text.",
+        "type": "ftext",
+        "value": [
+            {
+                "class": "center-align header_1",
+                "style": "",
+                "text": "Side by Side"
+            }
+        ]
+    },
+
+    "GALLERY_TEAM": {
+        "title": "GALLERY_TEAM",
+        "info": "Gallery Page. Team at work.",
+        "type": "carousel",
+        "col": "col s12 m12 l12",
+        "value": [
+            "/images/working_2.jpg",
+            "/images/working_3.jpg",
+            "/images/working_4.jpg",
+            "/images/working_5.jpg",
+            "/images/working_6.jpg",
+            "/images/working_7.jpg",
+            "/images/working_8.jpg",
+            "/images/working_9.jpg",
+            "/images/working_10.jpg",
+            "/images/working_11.jpg",
+            "/images/working_12.jpg",
+            "/images/working_13.jpg",
+            "/images/working_14.jpg",
+            "/images/working_15.jpg",
+            "/images/working_16.jpg",
+            "/images/working_17.jpg"
+        ]
+    },
+
+    "GALLERY_TEAM_TEXT": {
+        "title": "GALLERY_TEAM_TEXT",
+        "info": "Gallery page. Team text.",
+        "type": "ftext",
+        "value": [
+            {
+                "class": "center-align header_1",
+                "style": "",
+                "text": "The Team at Work"
+            }
+        ]
+    },
+
+    "ABOUT_TEXT": {
+        "title": "ABOUT_TEXT",
+        "info": "About page. Quote.",
+        "type": "ftext",
+        "value": [
+            {
+                "class": "center-align header_2",
+                "style": "",
+                "text": "<br><br><br>\"WE ARE LOCALLY OWNED & OPERATED AND TAKE GREAT PRIDE IN SERVING OUR COMMUNITY. OUR STAFF ARE WELL TRAINED, WELL-SPOKEN, COURTEOUS & PROFESSIONAL AND UNDERSTAND THAT CUSTOMER SATISFACTION IS THE KEY TO OUR SUCCESS.  IF YOU ARE NOT COMPLETELY SATISFIED WITH OUR WORK, I PERSONALLY GUARANTEE THAT WE WILL COME BACK AND MAKE IT RIGHT!\""
+            },
+
+            {
+                "class": "header_2",
+                "style": "",
+                "text": "<br>​​ROB SNEDDEN<br>​​OWNER-OPERATOR<br>"
+            }
+        ]
+    },
+
+    "HOME_PAGE": {
+        "title": "HOME_PAGE",
+        "info": "Home Page Layout.",
+        "type": "layout",
+        "parentID": "pageContent",
+        "value": [
+            "HOME_SLIDER",
+            "HOME_TEXT_1",
+            "HOME_CAROUSEL",
+            "HOME_TEXT_2"
+        ]
+    },
+
+    "SERVICES_PAGE": {
+        "title": "SERVICES_PAGE",
+        "info": "Services Page Layout.",
+        "type": "layout",
+        "parentID": "pageContent",
+        "value": [
+            "SERVICES"
+        ]
+    },
+
+    "GALLERY_PAGE": {
+        "title": "GALLERY_PAGE",
+        "info": "Gallery Page Layout.",
+        "type": "layout",
+        "parentID": "pageContent",
+        "value": [
+            "GALLERY_BA",
+            "GALLERY_BA_TEXT",
+            "GALLERY_SS",
+            "GALLERY_SS_TEXT",
+            "GALLERY_TEAM",
+            "GALLERY_TEAM_TEXT"
+        ]
+    },
+
+    "VIDEOS_PAGE": {
+        "title": "VIDEOS_PAGE",
+        "info": "Videos Page Layout.",
+        "type": "layout",
+        "parentID": "pageContent",
+        "value": [
+            "VIDEOS"
+        ]
+    },
+
+    "ABOUT_PAGE": {
+        "title": "ABOUT_PAGE",
+        "info": "About Page Layout.",
+        "type": "layout",
+        "parentID": "pageContent",
+        "value": [
+            "ABOUT_TEXT"
+        ]
+    }
+}
+
